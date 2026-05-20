@@ -1,6 +1,7 @@
 ---
 import { experiences } from "../data/experience";
 import type { Lang } from "../i18n/ui";
+import { getTechIcon } from "../data/stack";
 
 interface Props {
   lang: Lang;
@@ -51,11 +52,17 @@ const { lang, t } = Astro.props;
                 </p>
 
                 <div class="mt-5 flex flex-wrap gap-2">
-                  {item.tags.map((tag) => (
-                    <span class="rounded-full border border-neutral-200 bg-neutral-50/50 px-3 py-1 text-xs text-neutral-600 dark:border-white/10 dark:bg-white/[0.03] dark:text-neutral-300">
-                      {tag}
-                    </span>
-                  ))}
+                  {
+                    item.tags.map((tag) => {
+                      const iconClass = getTechIcon(tag);
+                      return (
+                        <span class="inline-flex items-center gap-1.5 rounded-full border border-neutral-200 bg-neutral-50/50 px-3 py-1 text-xs text-neutral-600 dark:border-white/10 dark:bg-white/[0.03] dark:text-neutral-300">
+                          {iconClass && <i class={`${iconClass} text-[13px]`} />}
+                          <span>{tag}</span>
+                        </span>
+                      );
+                    })
+                  }
                 </div>
               </div>
 

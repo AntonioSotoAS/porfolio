@@ -15,7 +15,7 @@ const {
 } = Astro.props;
 ---
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang={lang}>
   <head>
     <meta charset="UTF-8" />
@@ -23,9 +23,17 @@ const {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
 
+    <!-- Devicon Icons CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+    />
+
     <script is:inline>
       const theme = localStorage.getItem("theme");
-      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      const prefersDark = window.matchMedia(
+        "(prefers-color-scheme: dark)"
+      ).matches;
 
       if (theme === "dark" || (!theme && prefersDark)) {
         document.documentElement.classList.add("dark");
@@ -35,7 +43,9 @@ const {
     </script>
   </head>
 
-  <body class="bg-white text-neutral-950 antialiased dark:bg-neutral-950 dark:text-neutral-100">
+  <body
+    class="bg-white text-neutral-950 antialiased dark:bg-neutral-950 dark:text-neutral-100"
+  >
     <slot />
 
     <script>

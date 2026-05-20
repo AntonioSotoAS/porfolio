@@ -1,0 +1,201 @@
+---
+import { stack } from "../data/stack";
+import type { Lang } from "../i18n/ui";
+
+interface Props {
+  lang: Lang;
+  t: any;
+}
+
+const { lang, t } = Astro.props;
+
+// Categorías unificadas para el filtrado en la interfaz
+const categories = [
+  { id: "all", label: t("stack.filter.all") },
+  { id: "frontend", label: t("stack.filter.frontend") },
+  { id: "backend", label: t("stack.filter.backend") },
+  { id: "mobile", label: t("stack.filter.mobile") },
+  { id: "database", label: t("stack.filter.databases") },
+  { id: "tools", label: t("stack.filter.tools") },
+];
+
+// Función para mapear categorías de stack a filtros de la UI
+const mapCategoryToFilter = (category: string): string => {
+  const norm = category.toLowerCase();
+  if (norm.includes("frontend")) return "frontend";
+  if (norm.includes("backend") || norm.includes("language")) return "backend";
+  if (norm.includes("mobile")) return "mobile";
+  if (norm.includes("database")) return "database";
+  return "tools"; // DevOps, Tools, Cloud / Tools
+};
+---
+
+<section
+  id="stack"
+  class="reveal border-t border-neutral-200 bg-white px-6 py-28 dark:border-white/10 dark:bg-neutral-950"
+>
+  <div class="mx-auto max-w-6xl">
+    <!-- Cabecera de Sección -->
+    <div class="mb-16 text-center md:mx-auto md:max-w-3xl md:text-left">
+      <p class="text-sm font-medium uppercase tracking-[0.3em] text-cyan-600 dark:text-cyan-400">
+        {t("stack.badge")}
+      </p>
+
+      <h2 class="mt-4 text-3xl font-semibold tracking-tight text-neutral-950 dark:text-white md:text-5xl">
+        {t("stack.title")}
+      </h2>
+
+      <p class="mt-6 text-base leading-8 text-neutral-600 dark:text-neutral-400">
+        {t("stack.description")}
+      </p>
+    </div>
+
+    <!-- Pestañas de Filtrado Táctiles / Premium -->
+    <div class="mb-12 flex flex-wrap justify-center gap-2 md:justify-start">
+      {
+        categories.map((category, idx) => (
+          <button
+            data-filter={category.id}
+            class={`stack-filter-btn cursor-pointer rounded-full px-5 py-2.5 text-xs font-semibold uppercase tracking-wider transition-all duration-300 ${
+              idx === 0
+                ? "bg-neutral-900 text-white dark:bg-white dark:text-neutral-950 shadow-md shadow-cyan-500/10"
+                : "border border-neutral-200 bg-neutral-50/50 text-neutral-600 hover:border-neutral-300 hover:bg-neutral-100 dark:border-white/10 dark:bg-white/[0.02] dark:text-neutral-400 dark:hover:bg-white/5"
+            }`}
+          >
+            {category.label}
+          </button>
+        ))
+      }
+    </div>
+
+    <!-- Grid de Habilidades con Efecto Glassmorphism -->
+    <div
+      id="stack-grid"
+      class="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5"
+    >
+      {
+        stack.map((tech) => {
+          const filterGroup = mapCategoryToFilter(tech.category);
+          return (
+            <div
+              data-tech-category={filterGroup}
+              class="tech-card group relative overflow-hidden rounded-[2rem] border border-neutral-200 bg-neutral-50/50 p-6 text-center transition-all duration-500 hover:-translate-y-1.5 hover:shadow-xl hover:border-cyan-500/30 hover:bg-neutral-100/50 dark:border-white/10 dark:bg-white/[0.03] dark:hover:bg-white/[0.05] dark:hover:shadow-cyan-500/5"
+            >
+              {/* Resplandor decorativo de fondo en hover */}
+              <div class="absolute -right-16 -top-16 -z-10 h-32 w-32 rounded-full bg-cyan-400/5 blur-xl transition-all duration-500 group-hover:scale-150 group-hover:bg-cyan-400/10 dark:bg-cyan-400/10 dark:group-hover:bg-cyan-400/20" />
+
+              <div class="flex flex-col items-center justify-center gap-4">
+                {/* Contenedor del Icono Devicon */}
+                <div class="flex h-16 w-16 items-center justify-center rounded-2xl bg-white shadow-inner transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3 dark:bg-neutral-900/60 dark:shadow-none">
+                  <i class={`${tech.icon} text-4xl transition-all duration-500 group-hover:saturate-150`} />
+                </div>
+
+                {/* Nombre de la tecnología */}
+                <div>
+                  <h3 class="font-semibold text-neutral-900 dark:text-white group-hover:text-cyan-500 dark:group-hover:text-cyan-400 transition-colors duration-300">
+                    {tech.name}
+                  </h3>
+                  <p class="mt-1 text-[10px] uppercase tracking-widest text-neutral-400 dark:text-neutral-500">
+                    {tech.category}
+                  </p>
+                </div>
+              </div>
+            </div>
+          );
+        })
+      }
+    </div>
+  </div>
+</section>
+
+<script>
+  function setupFiltering() {
+    const filterButtons = document.querySelectorAll(".stack-filter-btn");
+    const techCards = document.querySelectorAll<HTMLElement>(".tech-card");
+
+    filterButtons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const filterValue = btn.getAttribute("data-filter");
+
+        // Actualizar estados visuales de los botones
+        filterButtons.forEach((b) => {
+          b.classList.remove(
+            "bg-neutral-900",
+            "text-white",
+            "dark:bg-white",
+            "dark:text-neutral-950",
+            "shadow-md",
+            "shadow-cyan-500/10"
+          );
+          b.classList.add(
+            "border",
+            "border-neutral-200",
+            "bg-neutral-50/50",
+            "text-neutral-600",
+            "dark:border-white/10",
+            "dark:bg-white/[0.02]",
+            "dark:text-neutral-400"
+          );
+        });
+
+        btn.classList.remove(
+          "border",
+          "border-neutral-200",
+          "bg-neutral-50/50",
+          "text-neutral-600",
+          "dark:border-white/10",
+          "dark:bg-white/[0.02]",
+          "dark:text-neutral-400"
+        );
+        btn.classList.add(
+          "bg-neutral-900",
+          "text-white",
+          "dark:bg-white",
+          "dark:text-neutral-950",
+          "shadow-md",
+          "shadow-cyan-500/10"
+        );
+
+        // Filtrado dinámico con micro-animaciones
+        techCards.forEach((card) => {
+          const cardCategory = card.getAttribute("data-tech-category");
+
+          if (filterValue === "all" || cardCategory === filterValue) {
+            // Mostrar tarjeta
+            card.style.display = "block";
+            requestAnimationFrame(() => {
+              card.style.opacity = "1";
+              card.style.transform = "scale(1) translateY(0)";
+            });
+          } else {
+            // Ocultar tarjeta con suavizado
+            card.style.opacity = "0";
+            card.style.transform = "scale(0.92) translateY(5px)";
+            // Retrasar el display none para permitir que termine la animación
+            setTimeout(() => {
+              if (card.style.opacity === "0") {
+                card.style.display = "none";
+              }
+            }, 300);
+          }
+        });
+      });
+    });
+  }
+
+  // Ejecutar al cargar la página
+  document.addEventListener("DOMContentLoaded", setupFiltering);
+  // Preservar la interactividad entre transiciones de Astro (ViewTransitions)
+  document.addEventListener("astro:page-load", setupFiltering);
+</script>
+
+<style>
+  .tech-card {
+    transition:
+      opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+      transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+      border-color 0.3s ease,
+      background-color 0.3s ease,
+      box-shadow 0.3s ease;
+  }
+</style>

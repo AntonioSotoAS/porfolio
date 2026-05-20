@@ -3,6 +3,7 @@ import MainLayout from "../../layouts/MainLayout.astro";
 import Header from "../../components/Header.astro";
 import Hero from "../../components/Hero.astro";
 import About from "../../components/About.astro";
+import Stack from "../../components/Stack.astro";
 import ExperienceTimeline from "../../components/ExperienceTimeline.astro";
 import Achievements from "../../components/Achievements.astro";
 import Certifications from "../../components/Certifications.astro";
@@ -31,6 +32,7 @@ const t = useTranslations(lang);
   <main>
     <Hero t={t} />
     <About t={t} />
+    <Stack lang={lang} t={t} />
     <ExperienceTimeline lang={lang} t={t} />
     <Achievements lang={lang} t={t} />
     <Certifications lang={lang} t={t} />
