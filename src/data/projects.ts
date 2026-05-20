@@ -1,6 +1,7 @@
 import type { Lang } from "../i18n/ui";
 
 export type Project = {
+    id: string; // Identificador único para modales y DOM
     title: Record<Lang, string>;
     description: Record<Lang, string>;
     category: Record<Lang, string>;
@@ -10,10 +11,15 @@ export type Project = {
     image: string;
     href?: string;
     github?: string;
+    video?: string; // Ruta opcional a video de demostración
+    gallery?: string[]; // Rutas opcionales a capturas de pantalla
+    longDescription?: Record<Lang, string>; // Descripción larga opcional
+    features?: Record<Lang, string[]>; // Lista de características opcional
 };
 
 export const projects: Project[] = [
     {
+        id: "iactas",
         title: {
             es: "IACTAS",
             en: "IACTAS",
@@ -36,11 +42,43 @@ export const projects: Project[] = [
             pt: "Projeto institucional",
         },
         tags: ["Next.js", "React", "Gemini", "PWA", "IA"],
-        image: "/projects/iactas.jpg",
+        image: "/images/projects/iactas/Concepto.png",
         href: "#",
         github: "#",
+        video: "/images/projects/iactas/videoiactas.mp4",
+        gallery: [
+            "/images/projects/iactas/Concepto.png",
+            "/images/projects/iactas/paneladmin.png",
+            "/images/projects/iactas/subiendoacta.png",
+        ],
+        longDescription: {
+            es: "IACTAS es una solución innovadora con inteligencia artificial diseñada para optimizar y automatizar la transcripción y generación de actas judiciales a partir de las grabaciones de audiencias. Este proyecto obtuvo la Mención Honrosa Nacional en el Premio a las Buenas Prácticas en Gestión Pública 2025, destacando en la categoría de Innovación Pública por transformar radicalmente la velocidad y precisión del sistema legal.",
+            en: "IACTAS is an innovative AI-powered solution designed to optimize and automate the transcription and generation of judicial records from hearing recordings. This project won the National Honorable Mention at the 2025 Good Practices in Public Management Award, outstanding in the Public Innovation category for radically transforming the speed and accuracy of the legal system.",
+            pt: "O IACTAS é uma solução inovadora baseada em inteligência artificial projetada para otimizar e automatizar a transcrição e geração de atas judiciais a partir de gravações de audiências. Este projeto obteve a Menção Honrosa Nacional no Prêmio de Boas Práticas em Gestão Pública 2025, destacando-se na categoria de Inovação Pública por transformar radicalmente a velocidade e a precisão do sistema jurídico.",
+        },
+        features: {
+            es: [
+                "Procesamiento inteligente y transcripción precisa de audiencias judiciales en tiempo real.",
+                "Generación automática de resúmenes estructurados y actas formateadas según requerimientos legales.",
+                "Panel de administración interactivo para corregir, revisar y validar transcripciones y actas generadas.",
+                "Carga de archivos de audio/video y sincronización segura con almacenamiento en la nube."
+            ],
+            en: [
+                "Intelligent processing and accurate transcription of judicial hearings in real-time.",
+                "Automatic generation of structured summaries and formatted records based on legal standards.",
+                "Interactive admin panel to correct, review, and validate generated transcriptions and records.",
+                "Audio/video file upload and secure synchronization with cloud storage."
+            ],
+            pt: [
+                "Processamento inteligente e transcrição precisa de audiências judiciais em tempo real.",
+                "Geração automática de resumos estruturados e atas formatadas de acordo com requisitos legais.",
+                "Painel de administração interativo para corrigir, revisar e validar transcrições e atas geradas.",
+                "Upload de arquivos de áudio/vídeo e sincronização segura com armazenamento em nuvem."
+            ],
+        },
     },
     {
+        id: "sigetic",
         title: {
             es: "SIGETIC",
             en: "SIGETIC",
@@ -63,11 +101,12 @@ export const projects: Project[] = [
             pt: "Em produção",
         },
         tags: ["Python", "Django", "PWA", "Tickets", "Soporte"],
-        image: "/projects/sigetic.jpg",
+        image: "/images/projects/sigetic.jpg",
         href: "#",
         github: "#",
     },
     {
+        id: "sacpj",
         title: {
             es: "SACPJ",
             en: "SACPJ",
@@ -90,11 +129,12 @@ export const projects: Project[] = [
             pt: "Protótipo funcional",
         },
         tags: ["Python", "OpenCV", "Django", "Automatización"],
-        image: "/projects/sacpj.jpg",
+        image: "/images/projects/sacpj.jpg",
         href: "#",
         github: "#",
     },
     {
+        id: "saiz",
         title: {
             es: "SAIZ",
             en: "SAIZ",
@@ -117,11 +157,12 @@ export const projects: Project[] = [
             pt: "Projeto internacional",
         },
         tags: ["React", "Next.js", "NestJS", "Maps", "APIs"],
-        image: "/projects/saiz.jpg",
+        image: "/images/projects/saiz.jpg",
         href: "#",
         github: "#",
     },
     {
+        id: "escudo-vecinal",
         title: {
             es: "Escudo Vecinal",
             en: "Neighborhood Shield",
@@ -144,11 +185,12 @@ export const projects: Project[] = [
             pt: "Projeto vencedor",
         },
         tags: ["Mobile", "Firebase", "UX", "Seguridad"],
-        image: "/projects/escudo-vecinal.jpg",
+        image: "/images/projects/escudo-vecinal.jpg",
         href: "#",
         github: "#",
     },
     {
+        id: "sismo-seguro",
         title: {
             es: "Sismo Seguro",
             en: "Safe Quake",
@@ -171,7 +213,7 @@ export const projects: Project[] = [
             pt: "Projeto vencedor",
         },
         tags: ["Mobile", "Emergencias", "Firebase", "Impacto social"],
-        image: "/projects/sismo-seguro.jpg",
+        image: "/images/projects/sismo-seguro.jpg",
         href: "#",
         github: "#",
     },

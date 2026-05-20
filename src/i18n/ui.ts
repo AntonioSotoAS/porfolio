@@ -66,6 +66,13 @@ export const ui = {
     "certifications.description":
       "Formación continua y validación de habilidades técnicas.",
     "nav.certifications": "Certificaciones",
+    "projects.modal.close": "Cerrar",
+    "projects.modal.features": "Características clave",
+    "projects.modal.tech": "Tecnologías",
+    "projects.modal.video": "Video demostrativo",
+    "projects.modal.gallery": "Capturas de pantalla",
+    "projects.modal.code": "Ver código",
+    "projects.modal.demo": "Ver demo",
   },
 
   en: {
@@ -127,6 +134,13 @@ export const ui = {
     "certifications.description":
       "Continuous learning and validation of technical skills.",
     "nav.certifications": "Certifications",
+    "projects.modal.close": "Close",
+    "projects.modal.features": "Key features",
+    "projects.modal.tech": "Technologies",
+    "projects.modal.video": "Demo video",
+    "projects.modal.gallery": "Screenshots",
+    "projects.modal.code": "View code",
+    "projects.modal.demo": "Live demo",
   },
 
   pt: {
@@ -188,6 +202,13 @@ export const ui = {
     "certifications.description":
       "Aprendizado contínuo e validação de habilidades técnicas.",
     "nav.certifications": "Certificações",
+    "projects.modal.close": "Fechar",
+    "projects.modal.features": "Características principais",
+    "projects.modal.tech": "Tecnologias",
+    "projects.modal.video": "Vídeo demonstrativo",
+    "projects.modal.gallery": "Capturas de tela",
+    "projects.modal.code": "Ver código",
+    "projects.modal.demo": "Ver demo",
   },
 } as const;
 
