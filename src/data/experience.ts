@@ -8,6 +8,7 @@ export type ExperienceItem = {
     highlights: Record<Lang, string[]>;
     tags: string[];
     link?: string;
+    logo?: string;
 };
 
 export const experiences: ExperienceItem[] = [
@@ -18,6 +19,7 @@ export const experiences: ExperienceItem[] = [
             pt: "Analista Programador FullStack",
         },
         company: "Camposol",
+        logo: "/images/companies/camposol.png",
         period: {
             es: "Enero 2026 - Mayo 2026",
             en: "January 2026 - May 2026",
@@ -57,6 +59,7 @@ export const experiences: ExperienceItem[] = [
             pt: "Full-stack Developer",
         },
         company: "Poder Judicial - Corte del Santa",
+        logo: "/images/companies/cortedelsanta.png",
         period: {
             es: "Marzo 2025 - Diciembre 2025",
             en: "March 2025 - December 2025",
@@ -93,6 +96,7 @@ export const experiences: ExperienceItem[] = [
             pt: "Full-stack Developer",
         },
         company: "Xinnux",
+        logo: "/images/companies/xinnux.png",
         period: {
             es: "Octubre 2023 - Febrero 2025",
             en: "October 2023 - February 2025",
@@ -129,6 +133,7 @@ export const experiences: ExperienceItem[] = [
             pt: "Developer Android",
         },
         company: "Marco MKT",
+        logo: "/images/companies/marcomkt.png",
         period: {
             es: "Enero 2023 - Agosto 2023",
             en: "January 2023 - August 2023",
