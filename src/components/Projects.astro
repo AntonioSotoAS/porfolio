@@ -11,18 +11,18 @@ interface Props {
 const { lang, t } = Astro.props;
 ---
 
-<section id="proyectos" class="border-t border-white/10 bg-neutral-950 px-6 py-28">
+<section id="proyectos" class="border-t border-neutral-200 bg-white px-6 py-28 dark:border-white/10 dark:bg-neutral-950">
   <div class="mx-auto max-w-6xl">
     <div class="mb-12 max-w-3xl">
-      <p class="text-sm font-medium uppercase tracking-[0.3em] text-cyan-400">
+      <p class="text-sm font-medium uppercase tracking-[0.3em] text-cyan-600 dark:text-cyan-400">
         {t("projects.badge")}
       </p>
 
-      <h2 class="mt-4 text-3xl font-semibold tracking-tight text-white md:text-5xl">
+      <h2 class="mt-4 text-3xl font-semibold tracking-tight text-neutral-950 dark:text-white md:text-5xl">
         {t("projects.title")}
       </h2>
 
-      <p class="mt-6 text-base leading-8 text-neutral-400">
+      <p class="mt-6 text-base leading-8 text-neutral-600 dark:text-neutral-400">
         {t("projects.description")}
       </p>
     </div>
