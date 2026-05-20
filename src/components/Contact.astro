@@ -1,0 +1,118 @@
+---
+interface Props {
+  t: any;
+}
+
+const { t } = Astro.props;
+---
+
+<section id="contacto" class="border-t border-white/10 bg-neutral-950 px-6 py-28">
+  <div class="mx-auto max-w-6xl">
+    <div class="grid gap-12 lg:grid-cols-[0.9fr_1.1fr]">
+      <div>
+        <p class="text-sm font-medium uppercase tracking-[0.3em] text-cyan-400">
+          {t("contact.badge")}
+        </p>
+
+        <h2 class="mt-4 text-3xl font-semibold tracking-tight text-white md:text-5xl">
+          {t("contact.title")}
+        </h2>
+
+        <p class="mt-6 max-w-xl text-base leading-8 text-neutral-400">
+          {t("contact.description")}
+        </p>
+
+        <div class="mt-10 space-y-4">
+          <a
+            href="mailto:arturoantoniomontejosoto@gmail.com"
+            class="group flex items-center justify-between rounded-3xl border border-white/10 bg-white/[0.03] p-5 transition hover:border-cyan-400/40 hover:bg-white/[0.05]"
+          >
+            <div>
+              <p class="text-sm text-neutral-500">{t("contact.email.label")}</p>
+              <p class="mt-1 text-sm font-medium text-white sm:text-base">
+                arturoantoniomontejosoto@gmail.com
+              </p>
+            </div>
+
+            <span class="text-neutral-500 transition group-hover:text-cyan-300">
+              →
+            </span>
+          </a>
+
+          <a
+            href="https://www.linkedin.com/in/arturo-antonio-montejo-soto-2256b825b/"
+            target="_blank"
+            rel="noreferrer"
+            class="group flex items-center justify-between rounded-3xl border border-white/10 bg-white/[0.03] p-5 transition hover:border-cyan-400/40 hover:bg-white/[0.05]"
+          >
+            <div>
+              <p class="text-sm text-neutral-500">LinkedIn</p>
+              <p class="mt-1 text-sm font-medium text-white sm:text-base">
+                Arturo Antonio Montejo Soto
+              </p>
+            </div>
+
+            <span class="text-neutral-500 transition group-hover:text-cyan-300">
+              →
+            </span>
+          </a>
+
+          <a
+            href="https://github.com/"
+            target="_blank"
+            rel="noreferrer"
+            class="group flex items-center justify-between rounded-3xl border border-white/10 bg-white/[0.03] p-5 transition hover:border-cyan-400/40 hover:bg-white/[0.05]"
+          >
+            <div>
+              <p class="text-sm text-neutral-500">GitHub</p>
+              <p class="mt-1 text-sm font-medium text-white sm:text-base">
+                {t("contact.github.text")}
+              </p>
+            </div>
+
+            <span class="text-neutral-500 transition group-hover:text-cyan-300">
+              →
+            </span>
+          </a>
+        </div>
+      </div>
+
+      <div class="rounded-[2rem] border border-white/10 bg-white/[0.03] p-6 md:p-8">
+        <div class="rounded-[1.5rem] border border-cyan-400/20 bg-cyan-400/10 p-5">
+          <p class="text-sm font-medium text-cyan-300">
+            {t("contact.card.badge")}
+          </p>
+
+          <h3 class="mt-3 text-2xl font-semibold text-white">
+            {t("contact.card.title")}
+          </h3>
+
+          <p class="mt-4 text-sm leading-7 text-neutral-400">
+            {t("contact.card.description")}
+          </p>
+        </div>
+
+        <div class="mt-6 grid gap-4 sm:grid-cols-2">
+          <div class="rounded-3xl border border-white/10 bg-neutral-950/60 p-5">
+            <p class="text-sm text-neutral-500">{t("contact.location.label")}</p>
+            <p class="mt-2 font-medium text-white">Chimbote, Perú</p>
+          </div>
+
+          <div class="rounded-3xl border border-white/10 bg-neutral-950/60 p-5">
+            <p class="text-sm text-neutral-500">{t("contact.availability.label")}</p>
+            <p class="mt-2 font-medium text-white">
+              {t("contact.availability.value")}
+            </p>
+          </div>
+        </div>
+
+        <a
+          href="mailto:arturoantoniomontejosoto@gmail.com?subject=Contacto%20desde%20tu%20portafolio"
+          class="mt-6 flex w-full items-center justify-center rounded-full bg-white px-6 py-4 text-sm font-medium text-neutral-950 transition hover:bg-neutral-200"
+        >
+          {t("contact.button")}
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

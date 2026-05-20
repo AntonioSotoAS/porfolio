@@ -1,0 +1,56 @@
+---
+import { languages, type Lang } from "../i18n/ui";
+
+interface Props {
+  lang: Lang;
+  t: any;
+}
+
+const { lang, t } = Astro.props;
+
+const currentPath = Astro.url.pathname;
+const pathWithoutLang = currentPath.replace(/^\/(es|en|pt)/, "") || "/";
+---
+
+<header class="fixed left-0 top-0 z-50 w-full border-b border-white/10 bg-neutral-950/70 backdrop-blur-xl">
+  <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+    <a href={`/${lang}`} class="text-sm font-semibold tracking-tight text-white">
+      ARTURO ANTONIO MONTEJO SOTO
+    </a>
+
+    <nav class="hidden items-center gap-8 text-sm text-neutral-400 md:flex">
+      <a href="#sobre-mi" class="transition hover:text-white">{t("nav.about")}</a>
+      <a href="#experiencia" class="transition hover:text-white">{t("nav.experience")}</a>
+      <a href="#proyectos" class="transition hover:text-white">{t("nav.projects")}</a>
+      <a href="#stack" class="transition hover:text-white">{t("nav.stack")}</a>
+      <a href="#contacto" class="transition hover:text-white">{t("nav.contact")}</a>
+    </nav>
+
+    <div class="flex items-center gap-3">
+      <div class="flex rounded-full border border-white/10 bg-white/[0.03] p-1">
+        {
+          Object.entries(languages).map(([code, label]) => (
+            <a
+              href={`/${code}${pathWithoutLang === "/" ? "" : pathWithoutLang}`}
+              class={`rounded-full px-3 py-1 text-xs transition ${
+                code === lang
+                  ? "bg-white text-neutral-950"
+                  : "text-neutral-400 hover:text-white"
+              }`}
+              aria-label={`Cambiar idioma a ${label}`}
+            >
+              {code.toUpperCase()}
+            </a>
+          ))
+        }
+      </div>
+
+      <a
+        href="#contacto"
+        class="hidden rounded-full border border-white/10 px-4 py-2 text-sm text-neutral-200 transition hover:border-cyan-400/50 hover:text-white sm:inline-flex"
+      >
+        {t("nav.cta")}
+      </a>
+    </div>
+  </div>
+</header>
