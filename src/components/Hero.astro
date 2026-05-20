@@ -8,25 +8,46 @@ const { t } = Astro.props;
 
 <section class="relative overflow-hidden bg-white dark:bg-neutral-950">
   <div class="absolute inset-0 -z-10">
-    <div class="absolute left-1/2 top-0 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-cyan-500/10 blur-3xl"></div>
-    <div class="absolute right-0 top-40 h-[400px] w-[400px] rounded-full bg-violet-500/10 blur-3xl"></div>
+    <div
+      class="absolute left-1/2 top-0 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-cyan-500/10 blur-3xl"
+    >
+    </div>
+    <div
+      class="absolute right-0 top-40 h-[400px] w-[400px] rounded-full bg-violet-500/10 blur-3xl"
+    >
+    </div>
   </div>
 
-  <div class="mx-auto flex min-h-screen max-w-6xl flex-col justify-center px-6 pb-24 pt-32">
+  <div
+    class="mx-auto flex min-h-screen max-w-6xl flex-col justify-center px-6 pb-24 pt-32"
+  >
     <div class="max-w-4xl">
-      <p class="animate-fade-in-up mb-5 inline-flex rounded-full border border-cyan-400/20 bg-cyan-400/10 px-4 py-2 text-xs font-medium uppercase tracking-[0.25em] text-cyan-300">
+      <p
+        class="animate-fade-in-up mb-5 inline-flex rounded-full border border-cyan-400/20 bg-cyan-400/10 px-4 py-2 text-xs font-medium uppercase tracking-[0.25em] text-cyan-300"
+      >
         {t("hero.badge")}
       </p>
 
-      <h1 class="animate-fade-in-up animation-delay-100 text-5xl font-semibold tracking-tight text-neutral-950 dark:text-white md:text-7xl">
-        {t("hero.title")}
+      <h1
+        class="animate-fade-in-up animation-delay-100 text-5xl font-semibold tracking-tight text-neutral-950 dark:text-white md:text-7xl min-h-[3em] md:min-h-[2.5em]"
+      >
+        <span id="typewriter-text" data-text={t("hero.title")}
+          >{t("hero.title")}
+        </span><span
+          class="typewriter-cursor text-cyan-600 dark:text-cyan-400 font-normal"
+          >|</span
+        >
       </h1>
 
-      <p class="animate-fade-in-up animation-delay-200 mt-8 max-w-2xl text-lg leading-8 text-neutral-600 dark:text-neutral-400">
+      <p
+        class="animate-fade-in-up animation-delay-200 mt-8 max-w-2xl text-lg leading-8 text-neutral-600 dark:text-neutral-400"
+      >
         {t("hero.description")}
       </p>
 
-      <div class="animate-fade-in-up animation-delay-300 mt-10 flex flex-wrap gap-4">
+      <div
+        class="animate-fade-in-up animation-delay-300 mt-10 flex flex-wrap gap-4"
+      >
         <a
           href="#proyectos"
           class="rounded-full bg-neutral-900 px-6 py-3 text-sm font-medium text-white transition hover:bg-neutral-800 dark:bg-white dark:text-neutral-950 dark:hover:bg-neutral-200"
@@ -43,27 +64,91 @@ const { t } = Astro.props;
       </div>
     </div>
 
-    <div class="animate-fade-in-up animation-delay-400 mt-20 grid gap-4 md:grid-cols-3">
-      <div class="rounded-3xl border border-neutral-200 bg-neutral-50 p-6 dark:border-white/10 dark:bg-white/[0.03]">
-        <p class="text-3xl font-semibold text-neutral-950 dark:text-white">{t("hero.card.ai.title")}</p>
-        <p class="mt-3 text-sm leading-6 text-neutral-600 dark:text-neutral-400">
+    <div
+      class="animate-fade-in-up animation-delay-400 mt-20 grid gap-4 md:grid-cols-3"
+    >
+      <div
+        class="rounded-3xl border border-neutral-200 bg-neutral-50 p-6 dark:border-white/10 dark:bg-white/[0.03]"
+      >
+        <p class="text-3xl font-semibold text-neutral-950 dark:text-white">
+          {t("hero.card.ai.title")}
+        </p>
+        <p
+          class="mt-3 text-sm leading-6 text-neutral-600 dark:text-neutral-400"
+        >
           {t("hero.card.ai.description")}
         </p>
       </div>
 
-      <div class="rounded-3xl border border-neutral-200 bg-neutral-50 p-6 dark:border-white/10 dark:bg-white/[0.03]">
-        <p class="text-3xl font-semibold text-neutral-950 dark:text-white">{t("hero.card.web.title")}</p>
-        <p class="mt-3 text-sm leading-6 text-neutral-600 dark:text-neutral-400">
+      <div
+        class="rounded-3xl border border-neutral-200 bg-neutral-50 p-6 dark:border-white/10 dark:bg-white/[0.03]"
+      >
+        <p class="text-3xl font-semibold text-neutral-950 dark:text-white">
+          {t("hero.card.web.title")}
+        </p>
+        <p
+          class="mt-3 text-sm leading-6 text-neutral-600 dark:text-neutral-400"
+        >
           {t("hero.card.web.description")}
         </p>
       </div>
 
-      <div class="rounded-3xl border border-neutral-200 bg-neutral-50 p-6 dark:border-white/10 dark:bg-white/[0.03]">
-        <p class="text-3xl font-semibold text-neutral-950 dark:text-white">{t("hero.card.automation.title")}</p>
-        <p class="mt-3 text-sm leading-6 text-neutral-600 dark:text-neutral-400">
+      <div
+        class="rounded-3xl border border-neutral-200 bg-neutral-50 p-6 dark:border-white/10 dark:bg-white/[0.03]"
+      >
+        <p class="text-3xl font-semibold text-neutral-950 dark:text-white">
+          {t("hero.card.automation.title")}
+        </p>
+        <p
+          class="mt-3 text-sm leading-6 text-neutral-600 dark:text-neutral-400"
+        >
           {t("hero.card.automation.description")}
         </p>
       </div>
     </div>
   </div>
 </section>
+
+<style>
+  .typewriter-cursor {
+    animation: blink 1s step-end infinite;
+  }
+  @keyframes blink {
+    from,
+    to {
+      color: transparent;
+    }
+    50% {
+      color: inherit;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const element = document.getElementById("typewriter-text");
+    if (!element) return;
+
+    const text = element.getAttribute("data-text") || "";
+    element.textContent = ""; // Clear for typing effect
+    let index = 0;
+
+    function type() {
+      if (index < text.length) {
+        element.textContent += text.charAt(index);
+        index++;
+
+        // Dynamic speed based on punctuation
+        const char = text.charAt(index - 1);
+        let delay = 35; // base typing speed
+        if (char === "," || char === ";") delay = 180;
+        else if (char === ".") delay = 400;
+
+        setTimeout(type, delay);
+      }
+    }
+
+    // Start typing with elegant entrance delay
+    setTimeout(type, 800);
+  });
+</script>
