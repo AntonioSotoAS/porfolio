@@ -31,6 +31,17 @@ const { lang, t } = Astro.props;
       {
         achievements.map((item) => (
           <article class="flex flex-col rounded-[2rem] border border-neutral-200 bg-neutral-50/50 p-8 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:border-cyan-400/30 hover:bg-neutral-100/50 dark:border-white/10 dark:bg-white/[0.03] dark:hover:bg-white/[0.05] dark:hover:shadow-cyan-500/10">
+            {item.image && (
+              <div class="mb-6 overflow-hidden rounded-2xl border border-neutral-200 dark:border-white/10 aspect-video w-full">
+                <img 
+                  src={item.image} 
+                  alt={item.title[lang]} 
+                  class="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
+                  loading="lazy"
+                />
+              </div>
+            )}
+
             <div class="mb-4">
               <span class="inline-block rounded-full bg-cyan-100 px-3 py-1 text-xs font-medium text-cyan-800 dark:bg-cyan-900/30 dark:text-cyan-300">
                 {item.period[lang]}
@@ -47,6 +58,24 @@ const { lang, t } = Astro.props;
                   {desc}
                 </p>
               ))}
+
+              {item.link && (
+                <div class="pt-2">
+                  <a 
+                    href={item.link} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    class="inline-flex items-center gap-1.5 text-xs font-semibold text-cyan-600 hover:text-cyan-700 dark:text-cyan-400 dark:hover:text-cyan-300 transition-colors"
+                  >
+                    <span>
+                      {lang === 'es' ? 'Ver noticia' : lang === 'pt' ? 'Ver notícia' : 'Read article'}
+                    </span>
+                    <svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                  </a>
+                </div>
+              )}
             </div>
             
             <div class="mt-auto flex flex-wrap gap-2">
