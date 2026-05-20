@@ -15,6 +15,7 @@ export type Project = {
     gallery?: string[]; // Rutas opcionales a capturas de pantalla
     longDescription?: Record<Lang, string>; // Descripción larga opcional
     features?: Record<Lang, string[]>; // Lista de características opcional
+    demoLabel?: Record<Lang, string>; // Etiqueta personalizada opcional para el enlace de demostración/plataforma
 };
 
 export const projects: Project[] = [
@@ -101,9 +102,13 @@ export const projects: Project[] = [
             pt: "Em produção",
         },
         tags: ["Python", "Django", "PWA", "Tickets", "Soporte"],
-        image: "/images/projects/sigetic.jpg",
+        image: "/images/projects/sigetic/loginsigetic.png",
         href: "#",
         github: "#",
+        gallery: [
+            "/images/projects/sigetic/loginsigetic.png",
+            "/images/projects/sigetic/ticket.png",
+        ],
     },
     {
         id: "sacpj",
@@ -157,9 +162,14 @@ export const projects: Project[] = [
             pt: "Projeto internacional",
         },
         tags: ["React", "Next.js", "NestJS", "Maps", "APIs"],
-        image: "/images/projects/saiz.jpg",
-        href: "#",
+        image: "/images/projects/saiz/saiz.png",
+        href: "https://saiz.app/login",
         github: "#",
+        demoLabel: {
+            es: "Ver plataforma",
+            en: "View platform",
+            pt: "Ver plataforma",
+        },
     },
     {
         id: "escudo-vecinal",
@@ -185,9 +195,19 @@ export const projects: Project[] = [
             pt: "Projeto vencedor",
         },
         tags: ["Mobile", "Firebase", "UX", "Seguridad"],
-        image: "/images/projects/escudo-vecinal.jpg",
+        image: "/images/projects/escudo-vecinal/home.png",
         href: "#",
         github: "#",
+        gallery: [
+            "/images/projects/escudo-vecinal/login.png",
+            "/images/projects/escudo-vecinal/home.png",
+            "/images/projects/escudo-vecinal/escudovirtual.png",
+            "/images/projects/escudo-vecinal/alerta.png",
+            "/images/projects/escudo-vecinal/chat.png",
+            "/images/projects/escudo-vecinal/ubicacion.png",
+            "/images/projects/escudo-vecinal/contacto.png",
+            "/images/projects/escudo-vecinal/vecibot.png",
+        ],
     },
     {
         id: "sismo-seguro",
@@ -213,8 +233,19 @@ export const projects: Project[] = [
             pt: "Projeto vencedor",
         },
         tags: ["Mobile", "Emergencias", "Firebase", "Impacto social"],
-        image: "/images/projects/sismo-seguro.jpg",
+        image: "/images/projects/sismo-seguro/home.png",
         href: "#",
         github: "#",
+        gallery: [
+            "/images/projects/sismo-seguro/login.png",
+            "/images/projects/sismo-seguro/home.png",
+            "/images/projects/sismo-seguro/familia.png",
+            "/images/projects/sismo-seguro/asignarrolesfamilia.png",
+            "/images/projects/sismo-seguro/rankingentrefamilias.png",
+            "/images/projects/sismo-seguro/armatumochilaemer.png",
+            "/images/projects/sismo-seguro/alertasismos.png",
+            "/images/projects/sismo-seguro/puntoenceuntro.png",
+            "/images/projects/sismo-seguro/mapa.png",
+        ],
     },
 ];
