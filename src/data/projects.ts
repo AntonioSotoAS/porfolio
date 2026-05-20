@@ -86,14 +86,14 @@ export const projects: Project[] = [
             pt: "SIGETIC",
         },
         description: {
-            es: "Sistema web para la gestión de tickets de soporte técnico, seguimiento de incidencias y atención institucional.",
-            en: "Web system for managing technical support tickets, incident tracking and institutional assistance.",
-            pt: "Sistema web para gestão de tickets de suporte técnico, acompanhamento de incidentes e atendimento institucional.",
+            es: "Sistema institucional de gestión de tickets de soporte técnico, seguimiento en tiempo real y control administrativo.",
+            en: "Institutional system for technical support ticket management, real-time tracking, and administrative control.",
+            pt: "Sistema institucional de gestão de tickets de suporte técnico, acompanhamento em tempo real e controle administrativo.",
         },
         category: {
-            es: "Sistema web",
-            en: "Web system",
-            pt: "Sistema web",
+            es: "Gestión TI",
+            en: "IT Management",
+            pt: "Gestão de TI",
         },
         year: "2025",
         status: {
@@ -101,7 +101,7 @@ export const projects: Project[] = [
             en: "In production",
             pt: "Em produção",
         },
-        tags: ["Python", "Django", "PWA", "Tickets", "Soporte"],
+        tags: ["Next.js", "NestJS", "PWA", "RTK Query", "Socket.IO"],
         image: "/images/projects/sigetic/loginsigetic.png",
         href: "#",
         github: "#",
@@ -109,6 +109,43 @@ export const projects: Project[] = [
             "/images/projects/sigetic/loginsigetic.png",
             "/images/projects/sigetic/ticket.png",
         ],
+        longDescription: {
+            es: "SIGETIC es una plataforma institucional desarrollada para transformar la gestión del soporte técnico mediante un sistema centralizado de tickets, seguimiento en tiempo real y control administrativo. La solución permite digitalizar el proceso de atención de incidencias tecnológicas, reduciendo la informalidad en las solicitudes, mejorando los tiempos de respuesta y fortaleciendo la trazabilidad del servicio.\n\nEl proyecto fue diseñado bajo una arquitectura moderna, escalable y segura, integrando autenticación por roles, notificaciones push, dashboards de control y una experiencia de usuario optimizada para entornos web y móviles.",
+            en: "SIGETIC is an institutional platform developed to transform technical support management through a centralized ticket system, real-time tracking, and administrative control. The solution digitizes the technology incident response process, reducing request informalities, improving response times, and strengthening service traceability.\n\nThe project was designed under a modern, scalable, and secure architecture, integrating role-based authentication, push notifications, control dashboards, and a user experience optimized for web and mobile environments.",
+            pt: "SIGETIC é uma plataforma institucional desenvolvida para transformar a gestão de suporte técnico por meio de um sistema centralizado de tickets, rastreamento em tempo real e controle administrativo. A solução digitaliza o processo de atendimento de incidentes tecnológicos, reduzindo a informalidade nas solicitações, melhorando os tempos de resposta e fortalecendo a rastreabilidade do serviço.\n\nO projeto foi desenhado sob uma arquitetura moderna, escalável e segura, integrando autenticação por funções (roles), notificações push, painéis de controle e uma experiência do usuário otimizada para ambientes web e móveis.",
+        },
+        features: {
+            es: [
+                "Creación, clasificación y seguimiento de tickets de soporte técnico.",
+                "Notificaciones push y comunicación en tiempo real con Socket.IO.",
+                "Gestión de usuarios, técnicos, coordinadores y administradores mediante roles personalizados.",
+                "Panel de control con indicadores sobre el estado y rendimiento del servicio.",
+                "Trazabilidad completa de cada incidencia, desde su registro hasta su cierre.",
+                "Interfaz moderna, responsive y adaptable como Progressive Web App.",
+                "Integración entre frontend en Next.js y backend en NestJS mediante RTK Query.",
+                "Sistema preparado para escalar hacia reportes, métricas avanzadas y automatización de procesos internos."
+            ],
+            en: [
+                "Creation, classification, and tracking of technical support tickets.",
+                "Push notifications and real-time communication using Socket.IO.",
+                "Management of users, technicians, coordinators, and administrators via custom roles.",
+                "Control panel with service status and performance indicators.",
+                "Full traceability of each incident, from registration to closure.",
+                "Modern, responsive, and adaptable interface as a Progressive Web App (PWA).",
+                "Integration between Next.js frontend and NestJS backend using RTK Query.",
+                "System ready to scale towards reports, advanced metrics, and automation of internal processes."
+            ],
+            pt: [
+                "Criação, classificação e acompanhamento de tickets de suporte técnico.",
+                "Notificações push e comunicação em tempo real com Socket.IO.",
+                "Gestão de usuários, técnicos, coordenadores e administradores por meio de funções personalizadas.",
+                "Painel de controle com indicadores sobre o estado e o desempenho do serviço.",
+                "Rastreabilidade completa de cada incidente, desde o registro até o encerramento.",
+                "Interface moderna, responsiva e adaptável como Progressive Web App (PWA).",
+                "Integração entre frontend em Next.js e backend em NestJS utilizando RTK Query.",
+                "Sistema preparado para evoluir para relatórios, métricas avançadas e automatização de processos internos."
+            ],
+        },
     },
     {
         id: "sacpj",
@@ -146,22 +183,22 @@ export const projects: Project[] = [
             pt: "SAIZ",
         },
         description: {
-            es: "Plataforma comercial para seguimiento de leads, geolocalización de negocios, gestión de ventas y paneles administrativos.",
-            en: "Commercial platform for lead tracking, business geolocation, sales management and admin dashboards.",
-            pt: "Plataforma comercial para acompanhamento de leads, geolocalização de negócios, gestão de vendas e painéis administrativos.",
+            es: "Proyecto empresarial internacional enfocado en gestión de ventas, seguimiento de leads, geolocalización de negocios y administración comercial.",
+            en: "International enterprise project focused on sales management, lead tracking, business geolocation, and commercial administration.",
+            pt: "Projeto empresarial internacional focado em gestão de vendas, acompanhamento de leads, geolocalização de negócios e administração comercial.",
         },
         category: {
-            es: "Full-stack",
-            en: "Full-stack",
-            pt: "Full-stack",
+            es: "Gestión comercial internacional",
+            en: "International Business Management",
+            pt: "Gestão Comercial Internacional",
         },
-        year: "2024",
+        year: "2022 - 2025",
         status: {
             es: "Proyecto internacional",
             en: "International project",
             pt: "Projeto internacional",
         },
-        tags: ["React", "Next.js", "NestJS", "Maps", "APIs"],
+        tags: ["React", "Next.js", "NestJS", "Firebase", "Maps"],
         image: "/images/projects/saiz/saiz.png",
         href: "https://saiz.app/login",
         github: "#",
@@ -169,6 +206,37 @@ export const projects: Project[] = [
             es: "Ver plataforma",
             en: "View platform",
             pt: "Ver plataforma",
+        },
+        longDescription: {
+            es: "SAIZ es una plataforma tecnológica desarrollada para una empresa de Estados Unidos, orientada a la gestión de ventas, seguimiento de leads, geolocalización de negocios y administración comercial. El sistema permitió digitalizar procesos de prospección, registro de clientes, agendamiento de citas y control de actividades comerciales mediante una solución web moderna y escalable.\n\nMi participación estuvo enfocada en el desarrollo frontend y backend, integrando módulos administrativos, formularios dinámicos, autenticación, APIs y funcionalidades orientadas a mejorar la operación comercial y el seguimiento de oportunidades de negocio.",
+            en: "SAIZ is a technology platform developed for a United States company, oriented towards sales management, lead tracking, business geolocation, and commercial administration. The system digitized prospection, customer registration, appointment scheduling, and commercial activity control processes through a modern and scalable web solution.\n\nMy participation was focused on frontend and backend development, integrating administrative modules, dynamic forms, authentication, APIs, and features aimed at improving commercial operations and business opportunity tracking.",
+            pt: "SAIZ é uma plataforma tecnológica desenvolvida para uma empresa dos Estados Unidos, focada na gestão de vendas, acompanhamento de leads, geolocalização de negócios e administração comercial. O sistema permitiu digitalizar processos de prospecção, registro de clientes, agendamento de consultas e controle de atividades comerciais por meio de uma solução web moderna e escalável.\n\nMinha participação esteve focada no desenvolvimento frontend e backend, integrando módulos administrativos, formulários dinâmicos, autenticação, APIs e funcionalidades voltadas para melhorar a operação comercial e o acompanhamento de oportunidades de negócios.",
+        },
+        features: {
+            es: [
+                "Gestión de leads, clientes y oportunidades comerciales.",
+                "Registro de ventas, citas y seguimiento de actividades del equipo comercial.",
+                "Geolocalización de negocios y visualización de información mediante mapas.",
+                "Paneles administrativos para control de usuarios, clientes, líneas de negocio y ventas.",
+                "Desarrollo con tecnologías modernas como React, Next.js, NestJS y Firebase.",
+                "Implementación de autenticación, validaciones, formularios avanzados y consumo de APIs."
+            ],
+            en: [
+                "Management of leads, clients, and commercial opportunities.",
+                "Registration of sales, appointments, and activity tracking of the sales team.",
+                "Business geolocation and information visualization using maps.",
+                "Administrative dashboards to control users, clients, business lines, and sales.",
+                "Development with modern technologies such as React, Next.js, NestJS, and Firebase.",
+                "Implementation of authentication, validations, advanced forms, and API consumption."
+            ],
+            pt: [
+                "Gestão de leads, clientes e oportunidades comerciais.",
+                "Registro de vendas, compromissos e acompanhamento de atividades da equipe comercial.",
+                "Geolocalização de negócios e visualização de informações por meio de mapas.",
+                "Painéis administrativos para controle de usuários, clientes, linhas de negócios e vendas.",
+                "Desenvolvimento com tecnologias modernas como React, Next.js, NestJS e Firebase.",
+                "Implementação de autenticação, validações, formulários avançados e consumo de APIs."
+            ],
         },
     },
     {
