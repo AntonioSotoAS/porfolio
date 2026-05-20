@@ -1,3 +1,183 @@
----
-return Astro.redirect("/es");
----
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arturo Antonio Montejo Soto | Portafolio</title>
+    <meta http-equiv="refresh" content="0;url=/es" />
+    <meta name="robots" content="noindex" />
+    <link rel="canonical" href="/es" />
+
+    <style>
+      :root {
+        color-scheme: dark;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #030303;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        overflow: hidden;
+        color: #ffffff;
+      }
+
+      /* Ambient background glows */
+      .glow-container {
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        overflow: hidden;
+        pointer-events: none;
+      }
+      .glow-1 {
+        position: absolute;
+        top: -10%;
+        left: -10%;
+        width: 60%;
+        height: 60%;
+        background: radial-gradient(
+          circle,
+          rgba(6, 182, 212, 0.08) 0%,
+          transparent 70%
+        );
+        filter: blur(80px);
+      }
+      .glow-2 {
+        position: absolute;
+        bottom: -10%;
+        right: -10%;
+        width: 60%;
+        height: 60%;
+        background: radial-gradient(
+          circle,
+          rgba(139, 92, 246, 0.08) 0%,
+          transparent 70%
+        );
+        filter: blur(80px);
+      }
+
+      /* Main Card */
+      .loader-card {
+        position: relative;
+        z-index: 10;
+        background: rgba(255, 255, 255, 0.01);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 28px;
+        padding: 40px;
+        width: 320px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5),
+          inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        animation: fadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      }
+
+      /* Premium Spinner */
+      .spinner-box {
+        position: relative;
+        width: 64px;
+        height: 64px;
+        margin-bottom: 24px;
+      }
+      .spinner-outer {
+        position: absolute;
+        inset: 0;
+        border-radius: 50%;
+        padding: 3px;
+        background: linear-gradient(135deg, #06b6d4, #8b5cf6);
+        -webkit-mask: linear-gradient(#fff 0 0) content-box,
+          linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+        animation: rotate 1.2s linear infinite;
+      }
+      .spinner-inner {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: #06b6d4;
+        box-shadow: 0 0 12px #06b6d4;
+        animation: pulse 1.5s ease-in-out infinite;
+      }
+
+      /* Text details */
+      .title {
+        font-size: 1.1rem;
+        font-weight: 500;
+        letter-spacing: 0.02em;
+        margin: 0 0 8px 0;
+        color: rgba(255, 255, 255, 0.95);
+      }
+      .subtitle {
+        font-size: 0.85rem;
+        color: rgba(255, 255, 255, 0.45);
+        margin: 0;
+        font-weight: 400;
+      }
+
+      @keyframes rotate {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+      @keyframes pulse {
+        0%,
+        100% {
+          transform: translate(-50%, -50%) scale(0.85);
+          opacity: 0.6;
+        }
+        50% {
+          transform: translate(-50%, -50%) scale(1.2);
+          opacity: 1;
+          box-shadow: 0 0 18px rgba(6, 182, 212, 0.8);
+        }
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(12px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="glow-container">
+      <div class="glow-1"></div>
+      <div class="glow-2"></div>
+    </div>
+
+    <div class="loader-card">
+      <div class="spinner-box">
+        <div class="spinner-outer"></div>
+        <div class="spinner-inner"></div>
+      </div>
+      <h1 class="title">Redireccionando</h1>
+      <p class="subtitle">Arturo Antonio Montejo Soto | Portafolio</p>
+    </div>
+
+    <script>
+      // Execute instant redirection without delay
+      window.location.replace("/es");
+    </script>
+  </body>
+</html>
