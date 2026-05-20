@@ -56,6 +56,11 @@ export const ui = {
     "experience.description":
       "Una línea de tiempo con algunos de los roles, proyectos y soluciones en los que he trabajado, desde desarrollo móvil hasta plataformas full-stack, automatización e inteligencia artificial.",
     "nav.experience": "Experiencia",
+    "achievements.badge": "Logros",
+    "achievements.title": "Reconocimientos y premios destacados.",
+    "achievements.description":
+      "Premios a nivel nacional en innovación, buenas prácticas en gestión pública y hackathons.",
+    "nav.achievements": "Logros",
   },
 
   en: {
@@ -107,6 +112,11 @@ export const ui = {
     "experience.description":
       "A timeline with some of the roles, projects and solutions I have worked on, from mobile development to full-stack platforms, automation and artificial intelligence.",
     "nav.experience": "Experience",
+    "achievements.badge": "Achievements",
+    "achievements.title": "Outstanding recognitions and awards.",
+    "achievements.description":
+      "National awards in innovation, good practices in public management and hackathons.",
+    "nav.achievements": "Achievements",
   },
 
   pt: {
@@ -158,6 +168,11 @@ export const ui = {
     "experience.description":
       "Uma linha do tempo com alguns dos cargos, projetos e soluções em que trabalhei, desde desenvolvimento mobile até plataformas full-stack, automação e inteligência artificial.",
     "nav.experience": "Experiência",
+    "achievements.badge": "Conquistas",
+    "achievements.title": "Reconhecimentos e prêmios em destaque.",
+    "achievements.description":
+      "Prêmios nacionais em inovação, boas práticas na gestão pública e hackathons.",
+    "nav.achievements": "Conquistas",
   },
 } as const;
 

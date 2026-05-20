@@ -13,6 +13,45 @@ export type ExperienceItem = {
 export const experiences: ExperienceItem[] = [
     {
         role: {
+            es: "Analista Programador FullStack",
+            en: "Full-Stack Developer Analyst",
+            pt: "Analista Programador FullStack",
+        },
+        company: "Camposol",
+        period: {
+            es: "Enero 2026 - Actualidad",
+            en: "January 2026 - Present",
+            pt: "Janeiro 2026 - Presente",
+        },
+        description: {
+            es: "Implementación del frontend del sistema Sayta, desarrollo del backend con microservicios en Java y soporte en despliegues en la nube.",
+            en: "Implementation of the frontend for the Sayta system, backend development with Java microservices, and support for cloud deployments.",
+            pt: "Implementação do frontend do sistema Sayta, desenvolvimento de backend com microsserviços em Java e suporte em implantações em nuvem.",
+        },
+        highlights: {
+            es: [
+                "Realicé la implementación del frontend del sistema Sayta aplicando React y TypeScript.",
+                "Desarrollé servicios del backend con Java y arquitectura de microservicios.",
+                "Brindé apoyo en despliegues en la nube (Cloud).",
+                "Implementé la sincronización de datos en tiempo real utilizando Firebase y Cloud Firestore.",
+            ],
+            en: [
+                "Implemented the frontend of the Sayta system using React and TypeScript.",
+                "Developed backend services using Java and a microservices architecture.",
+                "Provided support for cloud infrastructure deployments.",
+                "Implemented real-time data synchronization using Firebase and Cloud Firestore.",
+            ],
+            pt: [
+                "Realizei a implementação do frontend do sistema Sayta aplicando React e TypeScript.",
+                "Desenvolvi serviços de backend com Java e arquitetura de microsserviços.",
+                "Prestei apoio em implantações na nuvem (Cloud).",
+                "Implementei a sincronização de dados em tempo real utilizando Firebase e Cloud Firestore.",
+            ],
+        },
+        tags: ["React", "TypeScript", "Java", "Microservicios", "Cloud", "Firebase", "Firestore"],
+    },
+    {
+        role: {
             es: "Full-stack Developer",
             en: "Full-stack Developer",
             pt: "Full-stack Developer",
