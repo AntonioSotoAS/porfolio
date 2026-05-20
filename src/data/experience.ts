@@ -74,20 +74,20 @@ export const experiences: ExperienceItem[] = [
             es: [
                 "Lideré el desarrollo de IACTAS, software con IA para generación automática de actas judiciales.",
                 "Desarrollé SIGETIC, plataforma web para gestión de tickets de soporte técnico.",
-                "Implementé SACPJ, solución con OpenCV para corrección de exámenes y control de asistencia.",
+                "Desarrollé Olimpiadas PJ, plataforma web para digitalizar y centralizar la inscripción deportiva institucional.",
             ],
             en: [
                 "Led the development of IACTAS, AI software for automatic judicial record generation.",
                 "Built SIGETIC, a web platform for technical support ticket management.",
-                "Implemented SACPJ, an OpenCV-based solution for exam grading and attendance control.",
+                "Developed Olimpiadas PJ, a web platform to digitize and centralize institutional sports registration.",
             ],
             pt: [
                 "Liderei o desenvolvimento do IACTAS, software com IA para geração automática de atas judiciais.",
                 "Desenvolvi o SIGETIC, plataforma web para gestão de tickets de suporte técnico.",
-                "Implementei o SACPJ, solução com OpenCV para correção de provas e controle de presença.",
+                "Desenvolvi o Olimpiadas PJ, plataforma web para digitalizar e centralizar a inscrição esportiva institucional.",
             ],
         },
-        tags: ["React", "Next.js", "Django", "Python", "PWA", "Gemini", "OpenCV"],
+        tags: ["React", "Next.js", "TypeScript", "NestJS", "MySQL", "PWA", "Gemini", "Socket.IO"],
     },
     {
         role: {
