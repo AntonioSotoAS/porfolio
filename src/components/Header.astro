@@ -51,24 +51,50 @@ const pathWithoutLang = currentPath.replace(/^\/(es|en|pt)/, "") || "/";
 
     <div class="flex items-center gap-3">
       <ThemeToggle />
-      <div
-        class="flex rounded-full border border-neutral-200 bg-neutral-50 p-1 dark:border-white/10 dark:bg-white/[0.03]"
-      >
-        {
-          Object.entries(languages).map(([code, label]) => (
-            <a
-              href={`/${code}${pathWithoutLang === "/" ? "" : pathWithoutLang}`}
-              class={`rounded-full px-3 py-1 text-xs transition ${
-                code === lang
-                  ? "bg-white text-neutral-950 shadow-sm dark:bg-white dark:text-neutral-950"
-                  : "text-neutral-500 hover:text-neutral-950 dark:text-neutral-400 dark:hover:text-white"
-              }`}
-              aria-label={`Cambiar idioma a ${label}`}
-            >
-              {code.toUpperCase()}
-            </a>
-          ))
-        }
+      <div class="group relative">
+        <button
+          class="flex items-center gap-1.5 rounded-full border border-neutral-200 bg-neutral-50 px-3 py-1.5 text-xs font-medium text-neutral-700 transition hover:bg-neutral-100 dark:border-white/10 dark:bg-white/[0.03] dark:text-neutral-200 dark:hover:bg-white/5"
+          aria-label="Seleccionar idioma"
+        >
+          {lang.toUpperCase()}
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="12"
+            height="12"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="transition-transform group-hover:rotate-180"
+            ><path d="m6 9 6 6 6-6"></path>
+          </svg>
+        </button>
+
+        <div class="absolute right-0 top-full hidden pt-2 group-hover:block">
+          <div
+            class="flex w-32 flex-col overflow-hidden rounded-xl border border-neutral-200 bg-white shadow-lg dark:border-white/10 dark:bg-neutral-900"
+          >
+            {
+              Object.entries(languages).map(([code, label]) => (
+                <a
+                  href={`/${code}${
+                    pathWithoutLang === "/" ? "" : pathWithoutLang
+                  }`}
+                  class={`px-4 py-2.5 text-xs transition hover:bg-neutral-50 dark:hover:bg-white/5 ${
+                    code === lang
+                      ? "bg-neutral-50 font-medium text-cyan-600 dark:bg-white/[0.02] dark:text-cyan-400"
+                      : "text-neutral-600 dark:text-neutral-400"
+                  }`}
+                  aria-label={`Cambiar idioma a ${label}`}
+                >
+                  {label}
+                </a>
+              ))
+            }
+          </div>
+        </div>
       </div>
 
       <a
