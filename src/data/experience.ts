@@ -19,9 +19,9 @@ export const experiences: ExperienceItem[] = [
         },
         company: "Camposol",
         period: {
-            es: "Enero 2026 - Actualidad",
-            en: "January 2026 - Present",
-            pt: "Janeiro 2026 - Presente",
+            es: "Enero 2026 - Mayo 2026",
+            en: "January 2026 - May 2026",
+            pt: "Janeiro 2026 - Maio 2026",
         },
         description: {
             es: "Implementación del frontend del sistema Sayta, desarrollo del backend con microservicios en Java y soporte en despliegues en la nube.",
