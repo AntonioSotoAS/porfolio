@@ -61,6 +61,11 @@ export const ui = {
     "achievements.description":
       "Premios a nivel nacional en innovación, buenas prácticas en gestión pública y hackathons.",
     "nav.achievements": "Logros",
+    "certifications.badge": "Certificaciones",
+    "certifications.title": "Diplomas y certificaciones.",
+    "certifications.description":
+      "Formación continua y validación de habilidades técnicas.",
+    "nav.certifications": "Certificaciones",
   },
 
   en: {
@@ -117,6 +122,11 @@ export const ui = {
     "achievements.description":
       "National awards in innovation, good practices in public management and hackathons.",
     "nav.achievements": "Achievements",
+    "certifications.badge": "Certifications",
+    "certifications.title": "Diplomas and certifications.",
+    "certifications.description":
+      "Continuous learning and validation of technical skills.",
+    "nav.certifications": "Certifications",
   },
 
   pt: {
@@ -173,6 +183,11 @@ export const ui = {
     "achievements.description":
       "Prêmios nacionais em inovação, boas práticas na gestão pública e hackathons.",
     "nav.achievements": "Conquistas",
+    "certifications.badge": "Certificações",
+    "certifications.title": "Diplomas e certificações.",
+    "certifications.description":
+      "Aprendizado contínuo e validação de habilidades técnicas.",
+    "nav.certifications": "Certificações",
   },
 } as const;
 

@@ -1,0 +1,58 @@
+---
+import { certifications } from "../data/certifications";
+import type { Lang } from "../i18n/ui";
+
+interface Props {
+  lang: Lang;
+  t: any;
+}
+
+const { lang, t } = Astro.props;
+---
+
+<section id="certificaciones" class="border-t border-neutral-200 bg-white px-6 py-28 dark:border-white/10 dark:bg-neutral-950">
+  <div class="mx-auto max-w-6xl">
+    <div class="mb-16 max-w-3xl">
+      <p class="text-sm font-medium uppercase tracking-[0.3em] text-cyan-600 dark:text-cyan-400">
+        {t("certifications.badge")}
+      </p>
+
+      <h2 class="mt-4 text-3xl font-semibold tracking-tight text-neutral-950 dark:text-white md:text-5xl">
+        {t("certifications.title")}
+      </h2>
+
+      <p class="mt-6 text-base leading-8 text-neutral-600 dark:text-neutral-400">
+        {t("certifications.description")}
+      </p>
+    </div>
+
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {
+        certifications.map((item) => (
+          <a 
+            href={item.link || '#'} 
+            target={item.link && item.link !== '#' ? "_blank" : "_self"}
+            rel="noopener noreferrer"
+            class="group flex flex-col rounded-2xl border border-neutral-200 bg-neutral-50/50 p-6 transition hover:border-cyan-400/30 hover:bg-neutral-100/50 dark:border-white/10 dark:bg-white/[0.03] dark:hover:bg-white/[0.05]"
+          >
+            <div class="mb-4 flex items-center justify-between">
+              <span class="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-cyan-100 text-cyan-600 dark:bg-cyan-900/30 dark:text-cyan-400">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></svg>
+              </span>
+              <span class="text-xs font-medium text-neutral-500 dark:text-neutral-400">{item.date[lang]}</span>
+            </div>
+            
+            <h3 class="mb-2 text-lg font-semibold text-neutral-950 dark:text-white">
+              {item.title[lang]}
+            </h3>
+            
+            <p class="mt-auto text-sm text-neutral-600 dark:text-neutral-400 flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+              {item.issuer}
+            </p>
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</section>
