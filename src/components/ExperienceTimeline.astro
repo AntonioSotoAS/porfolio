@@ -10,7 +10,7 @@ interface Props {
 const { lang, t } = Astro.props;
 ---
 
-<section id="experiencia" class="border-t border-neutral-200 bg-white px-6 py-28 dark:border-white/10 dark:bg-neutral-950">
+<section id="experiencia" class="reveal border-t border-neutral-200 bg-white px-6 py-28 dark:border-white/10 dark:bg-neutral-950">
   <div class="mx-auto max-w-6xl">
     <div class="mb-16 max-w-3xl">
       <p class="text-sm font-medium uppercase tracking-[0.3em] text-cyan-600 dark:text-cyan-400">
@@ -59,7 +59,7 @@ const { lang, t } = Astro.props;
                 </div>
               </div>
 
-              <div class="rounded-[2rem] border border-neutral-200 bg-neutral-50/50 p-6 transition hover:border-cyan-400/30 hover:bg-neutral-100/50 dark:border-white/10 dark:bg-white/[0.03] dark:hover:bg-white/[0.05] md:p-8">
+              <div class="rounded-[2rem] border border-neutral-200 bg-neutral-50/50 p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:border-cyan-400/30 hover:bg-neutral-100/50 dark:border-white/10 dark:bg-white/[0.03] dark:hover:bg-white/[0.05] dark:hover:shadow-cyan-500/10 md:p-8">
                 <p class="text-base leading-8 text-neutral-700 dark:text-neutral-300">
                   {item.description[lang]}
                 </p>

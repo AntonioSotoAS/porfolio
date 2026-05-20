@@ -10,7 +10,7 @@ interface Props {
 const { lang, t } = Astro.props;
 ---
 
-<section id="logros" class="border-t border-neutral-200 bg-white px-6 py-28 dark:border-white/10 dark:bg-neutral-950">
+<section id="logros" class="reveal border-t border-neutral-200 bg-white px-6 py-28 dark:border-white/10 dark:bg-neutral-950">
   <div class="mx-auto max-w-6xl">
     <div class="mb-16 max-w-3xl">
       <p class="text-sm font-medium uppercase tracking-[0.3em] text-cyan-600 dark:text-cyan-400">
@@ -29,7 +29,7 @@ const { lang, t } = Astro.props;
     <div class="grid gap-8 md:grid-cols-2">
       {
         achievements.map((item) => (
-          <article class="flex flex-col rounded-[2rem] border border-neutral-200 bg-neutral-50/50 p-8 transition hover:border-cyan-400/30 hover:bg-neutral-100/50 dark:border-white/10 dark:bg-white/[0.03] dark:hover:bg-white/[0.05]">
+          <article class="flex flex-col rounded-[2rem] border border-neutral-200 bg-neutral-50/50 p-8 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:border-cyan-400/30 hover:bg-neutral-100/50 dark:border-white/10 dark:bg-white/[0.03] dark:hover:bg-white/[0.05] dark:hover:shadow-cyan-500/10">
             <div class="mb-4">
               <span class="inline-block rounded-full bg-cyan-100 px-3 py-1 text-xs font-medium text-cyan-800 dark:bg-cyan-900/30 dark:text-cyan-300">
                 {item.period[lang]}
